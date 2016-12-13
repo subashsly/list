@@ -1,0 +1,26 @@
+
+<div class="container"><br>
+<table class="table">
+	<tr>
+		<th>Firstname</th>
+		<th>Lastname</th>
+		<th>Date of birth</th>
+		<th>Presence</th>
+		<th>Descrioption</th>
+	</tr>
+<% @tables.each do |table| %>
+	<tr>
+	<td><%= table.firstname%></td>
+	<td><%= table.lastname%></td>
+	<td><%= table.date_of_birth.to_date%></td>
+	<td><%= table.presence%></td>
+	<td><%= table.description%></td>
+	<td><%= link_to 'show', table, class: "btn btn-success"%></td>
+	<td><%= link_to 'Edit', edit_table_path(table), class: "btn btn-primary"%></td>
+	<td><%= link_to 'Delete', table,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }%></td>
+		</tr>
+<% end %>
+</table>
+
+<%= link_to 'New Project', new_table_path, class: "btn btn-primary"%>
+</div>

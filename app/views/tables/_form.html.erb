@@ -1,0 +1,9 @@
+
+<%= simple_form_for @table do |f| %>
+	<%= f.input :firstname %><br>
+	<%= f.input :lastname %><br>
+	<%= f.input :date_of_birth %>
+	<%= f.input :presence%>
+	<%= f.input :description, input_html: { maxlength:120  } %><br>	
+	<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
